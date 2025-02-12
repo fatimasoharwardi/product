@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="product-styles.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    
+</head>
+<body>
+    <!--navbar start-->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <div class="logo-container">
+                    <img src="Screenshot_2025-01-30-10-59-01-36-removebg-preview.png" alt="Universal Stationery" class="logo-img">
+                </div>
+                <div class="brand-text">
+                    <span class="brand-universal">Universal</span>
+                    <span class="brand-stationery">STATIONERY</span>
+                </div>
+            </a>
+        </div>
+        <!-- Move menu icon to the right -->
+        <div class="nav-controls">
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span class="menu-icon">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </span>
+            </button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li class="product-dropdown">
+                    <a href="#"><i class="fas fa-box"></i> Products</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-item">
+                            <a href="#">Products</a>
+                            <div class="submenu">
+                                <a href="notebooks.html" data-filter="notebooks">Notebooks</a>
+                                <a href="pens.html" data-filter="pens">Pens</a>
+                                <a href="art-supplies.html" data-filter="art">Art Supplies</a>
+                                <a href="office-supplies.html" data-filter="office">Office</a>
+                                <a href="school-supplies.html" data-filter="school">School</a>
+                                <a href="drawing-supplies.html" data-filter="drawing">Drawing</a>
+                                <a href="writing-supplies.html" data-filter="writing">Writing</a>
+                                <a href="craft-supplies.html" data-filter="craft">Craft</a>
+                                <a href="storage-supplies.html" data-filter="storage">Storage</a>
+                                <a href="calendar-supplies.html" data-filter="calendars">Calendars</a>
+                                <a href="gift-supplies.css" data-filter="gifts">Gifts</a>
+                                <a href="accessories.html" data-filter="accessories">Accessories</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="brands.html">Brands</a>
+                            <div class="submenu">
+                                <a href="brand-pages/parker.html">Parker</a>
+                                <a href="brand-pages/faber-castell.html">Faber-Castell</a>
+                                <a href="brand-pages/moleskine.html">Moleskine</a>
+                                <a href="brand-pages/staedtler.html">Staedtler</a>
+                                <a href="brand-pages/pilot.html">Pilot</a>
+                                <a href="brand-pages/leuchtturm1917.html">Leuchtturm1917</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            <div class="nav-divider"></div>
+            <!-- Auth links will be moved here in mobile view -->
+            <div class="auth-nav">
+                <a href="#" class="auth-link login" id="loginBtn">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+                <a href="#" class="auth-link signup" id="signupBtn">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </a>
+            </div>
+            <div class="nav-cart">
+                <button class="cart-btn" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+        
+<!-- Add Cart Modal before closing body tag -->
+<div class="cart-modal">
+    <div class="cart-container">
+        <button class="close-cart">
+            <i class="fas fa-times"></i>
+        </button>
+        <h2>Shopping Cart</h2>
+        <div class="cart-items">
+            <!-- Cart items will be inserted here -->
+        </div>
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span>$0.00</span>
+            </div>
+            <button class="checkout-btn">
+                Proceed to Checkout
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    </header>
+    <!--navbar end-->
+    <!--product start-->
+    <div class="container">   
+        <div class="content">
+                <h2>Our Products</h2>
+                <br>
+                <p>Discover our carefully curated collection of premium stationery items</p>
+            </div>
+            
+<!-- Add this before the filter-container div -->
+<div class="search-wrapper">
+    <div class="search-container">
+        <input type="text" id="product-search" placeholder="Search products...">
+        <i class="fas fa-search search-icon"></i>
+    </div>
+</div>
+
+<!-- Replace the existing filter-container div -->
+<div class="filter-container">
+    <button class="scroll-btn prev" id="scrollPrev">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="filter-scroll-container">
+        <div class="filter-buttons">
+            <button class="btn1 active" data-filter="all">All Products</button>
+            <button class="btn1" data-filter="notebooks">Notebooks</button>
+            <button class="btn1" data-filter="pens">Pens</button>
+            <button class="btn1" data-filter="art">Art Supplies</button>
+            <button class="btn1" data-filter="office">Office</button>
+            <button class="btn1" data-filter="school">School</button>
+            <button class="btn1" data-filter="drawing">Drawing</button>
+            <button class="btn1" data-filter="writing">Writing</button>
+            <button class="btn1" data-filter="craft">Craft</button>
+            <button class="btn1" data-filter="storage">Storage</button>
+            <button class="btn1" data-filter="calendars">Calendars</button>
+            <button class="btn1" data-filter="gifts">Gifts</button>
+        </div>
+    </div>
+    <button class="scroll-btn next" id="scrollNext">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+</div>
+            
+
+
+            <section class="featured-products section">
+                
+                <div class="products-grid">
+    <!-- Notebooks -->
+    <div class="product-card" data-category="notebooks">
+        <div class="product-image">
+            <img src="https://media.istockphoto.com/id/1203694037/photo/brown-leather-notebook.jpg?s=612x612&w=0&k=20&c=CZr-hWdPsrIuPlXNzUSY-5-YWjxd-r8a3L9qo79dWqY=" alt="Premium Leather Notebook">
+            <button class="cart-btn" onclick="addToCart(1, 'Premium Notebook', 24.99, 'notebook-image.jpg')">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <div class="product-info">
+            <h3>Premium Leather Notebook</h3>
+            <p class="product-price">$24.99</p>
+            <a href="product-details.html" class="explore-btn">
+                View details
+            </a>
+        </div>
+    </div>
+    <div class="product-card" data-category="notebooks">
+
+        <div class="product-image">
+            <img src="classic-notebook.jpg" alt="Classic Leather Notebook">
+            <button class="cart-btn" onclick="addToCart(101, 'Classic Leather Notebook', 34.99, 'classic-notebook.jpg')">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <div class="product-info">
+            <h3>Classic Leather Notebook</h3>
+            <p class="product-price">$34.99</p>
+            <a href="product-details.html" class="explore-btn">
+                View details
+            </a>
+        </div>
+    </div>
+
+    <!-- Pens -->
+    <div class="product-card" data-category="pens">
+        <div class="product-image">
+            <img src="https://m.media-amazon.com/images/I/811139mWIQL._AC_SL1500_.jpg" alt="Luxury Pen ">
+            <button class="cart-btn" onclick="addToCart(2, 'Luxury Pen ', 49.99, 'luxury-pen.jpg')">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <div class="product-info">
+            <h3>Luxury Pen</h3>
+            <p class="product-price">$49.99</p>
+            <a href="luxurypen.html" class="explore-btn">
+                View details
+                
+            </a>
+        </div>
+    </div>
+
+    <!-- Art Supplies -->
+    <div class="product-card" data-category="art">
+        <div class="product-image">
+            <img src="https://i5.walmartimages.com/asr/5a22afda-52fd-45ca-8322-d965bc95a97e.510ef2cf6d6bd9b5bed3c0926807eb11.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF" alt="Professional Art Kit">
+            <button class="cart-btn" onclick="addToCart(3, 'Professional Art Kit', 79.99, 'art-set.jpg')">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <div class="product-info">
+            <h3>Professional Art Kit</h3>
+            <p class="product-price">$79.99</p>
+            <a href="artkit.html" class="explore-btn">
+                View details
+            </a>
+        </div>
+    </div>
+
+    <!-- Office Supplies -->
+    <div class="product-card" data-category="office">
+        <div class="product-image">
+            <img src="https://www.luxuryformen.com/media/catalog/product/cache/7f855d93df6faf4f4bb5212befedd5ec/2/1/21.jpg">
+            <button class="cart-btn" onclick="addToCart(4, 'Executive Office Set', 129.99, 'office-set.jpg')">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <div class="product-info">
+            <h3>Executive Office Set</h3>
+            <p class="product-price">$129.99</p>
+            <a href="officeset.html" class="explore-btn">
+                View details
+            </a>
+        </div>
+    </div>
+
+    <!-- School Supplies -->
+    <div class="product-card" data-category="school">
+        <div class="product-image">
+            <img src="https://img.freepik.com/premium-photo/assortment-school-supplies-background_488220-1584.jpg?semt=ais_hybrid" alt="Complete School Kit">
+            <button class="cart-btn" onclick="addToCart(5, 'Complete School Kit', 89.99, 'school-set.jpg')">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <div class="product-info">
+            <h3>Complete School Kit</h3>
+            <p class="product-price">$89.99</p>
+            <a href="schoolkit.html" class="explore-btn">
+               View details
+            </a>
+            
+        </div>
+    </div>
+
+    <!-- Drawing Supplies -->
+    <div class="product-card" data-category="drawing">
+        <div class="product-image">
+            <img src="https://rung.com.pk/cdn/shop/products/deli-sketch-pencils-set-27-piece-art-supplies-professional-drawing-for-adults-pro-beginners-artist-degree-pencil-300_1024x1024.jpg?v=1614669965" alt="Artist Drawing Set">
+            <button class="cart-btn" onclick="addToCart(6, 'Artist Drawing Set', 59.99, 'drawing-set.jpg')">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <div class="product-info">
+            <h3>Artist Drawing Set</h3>
+            <p class="product-price">$59.99</p>
+            <a href="artist.html" class="explore-btn">
+               View details
+                
+            </a>
+        </div>
+    </div>
+
+    <!-- Writing Supplies -->
+    <div class="product-card" data-category="writing">
+        <div class="product-image">
+            <img src="https://www.unibrands.co/cdn/shop/files/DTC_BTS2024_StylizedLaydown_1..jpg?v=1722623885" alt="Premium Writing Kit">
+            <button class="cart-btn" onclick="addToCart(7, 'Premium Writing Kit', 44.99, 'writing-set.jpg')">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <div class="product-info">
+            <h3>Premium Writing Kit</h3>
+            <p class="product-price">$44.99</p>
+            <a href="writingkit.html" class="explore-btn">
+                View details
+               
+            </a>
+        </div>
+    </div>
+
+    <!-- Craft Supplies -->
+    <div class="product-card" data-category="craft">
+        <div class="product-image">
+            <img src="https://cdn.thewirecutter.com/wp-content/media/2024/09/kidssubscriptionboxes-2048px-4269.jpg?auto=webp&quality=75&width=1024" alt="Creative Craft Set">
+            <button class="cart-btn" onclick="addToCart(8, 'Creative Craft Set', 69.99, 'craft-set.jpg')">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <div class="product-info">
+            <h3>Creative Craft Set</h3>
+            <p class="product-price">$69.99</p>
+            <a href="craftset.html" class="explore-btn">
+                View details
+
+            </a>
+        </div>
+    </div>
+
+    <!-- Storage -->
+    <div class="product-card" data-category="storage">
+        <div class="product-image">
+            <img src="https://image.made-in-china.com/226f3j00dMyoftwIAgcR/Drawer-Style-Wall-Mounted-Stationery-Storage-Box-Plastic-Storage-Containers-Desktop-Organizer.webp" alt="Deluxe Storage Set">
+            <button class="cart-btn" onclick="addToCart(9, 'Deluxe Storage Set', 39.99, 'storage-set.jpg')">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <div class="product-info">
+            <h3>Deluxe Storage Set</h3>
+            <p class="product-price">$39.99</p>
+            <a href="storage.html" class="explore-btn">
+           
+        </a>
+        </div>
+    </div>
+
+    <!-- Calendars -->
+    <div class="product-card" data-category="calendars">
+        <div class="product-image">
+            <img src="https://styledegree.sg/wp-content/uploads/2021/03/icon1-Daily-Desk-_-Stationery-Organizer-With-Book-Divider.jpg" alt="2024 Planner Calendar">
+            <button class="cart-btn" onclick="addToCart(10, '2024 Planner Calendar', 29.99, 'calendar.jpg')">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <div class="product-info">
+            <h3>2024 Planner Calendar</h3>
+            <p class="product-price">$29.99</p>
+            <a href="calendar-supplies.html" class="explore-btn">
+                Explore More <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Gifts -->
+    <div class="product-card" data-category="gifts">
+        <div class="product-image">
+            <img src="https://styledegree.sg/wp-content/uploads/2021/03/icon1-Daily-Desk-_-Stationery-Organizer-With-Book-Divider.jpg" alt="Luxury Gift Set">
+            <button class="cart-btn" onclick="addToCart(11, 'Luxury Gift Set', 149.99, 'gift-set.jpg')">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <div class="product-info">
+            <h3>Luxury Gift Set</h3>
+            <p class="product-price">$149.99</p>
+            <a href="gift-supplies.html" class="explore-btn">
+                Explore More <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+            </section>
+              
+    <!--product end-->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Universal Stationery</h3>
+                <p>Crafting your writing experience since 1995</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon facebook" data-tooltip="Follow on Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon instagram" data-tooltip="Follow on Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon twitter" data-tooltip="Follow on Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Newsletter</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Universal Stationery. All rights reserved.</p>
+        </div>
+    </footer>
+
+   
+
+
+<!-- Add this before closing </body> tag -->
+<!-- Auth Modal -->
+<div class="auth-modal" id="loginModal">
+    <div class="auth-container">
+        <div class="auth-card">
+            <span class="close-btn">&times;</span>
+            <div class="auth-header">
+                <h2>Login</h2>
+                <p>Welcome back! Please login to your account.</p>
+            </div>
+            <form class="auth-form">
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="form-options">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="auth-btn">Login</button>
+                <p class="switch-text">Don't have an account? <a href="#" class="switch-auth-btn">Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="auth-modal" id="signupModal">
+    <div class="auth-container">
+        <div class="auth-card">
+            <span class="close-btn">&times;</span>
+            <div class="auth-header">
+                <h2>Sign Up</h2>
+                <p>Create your account to get started</p>
+            </div>
+            <form class="auth-form">
+                <div class="form-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="auth-btn">Sign Up</button>
+                <p class="switch-text">Already have an account? <a href="#" class="switch-auth-btn">Login</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>
