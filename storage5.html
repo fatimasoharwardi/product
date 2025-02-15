@@ -1,0 +1,116 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="product-styles.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="product-details.css">
+<link rel="stylesheet" href="responsive.css">
+    
+</head>
+<body>
+<main class="product-details-container">
+    <div class="product-details">
+        <div class="product-image-section">
+            <div class="main-image">
+                <img src="https://s.alicdn.com/@sc04/kf/H29b6e0b96e034d599d503077b5a0827cP.jpg_720x720q50.jpg" alt=" desk organizer ">
+                
+            </div>
+        </div>
+        
+        <div class="product-info-section">
+            <div class="product-header">
+                <h1>Premium Desk Organizer  </h1>
+                <div class="product-meta">
+                    <span class="sku">SKU: NB001</span>
+                    <span class="category">Category: Stationery</span>
+                </div>
+            </div>
+
+            <div class="product-rating">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="rating-count">(120 Reviews)</span>
+            </div>
+
+            <div class="price-details">
+                <div class="base-price">Unit Price: $17.99</div>
+                <div class="total-price">Total: <span id="total-price">$54.99</span></div>
+            </div>
+
+            <div class="product-description">
+                <h3>Product Details</h3>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>A complete set includes a range of hard and soft premium  box .</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>High-quality graphite ensures smooth application and easy band and you use a normal office bag.</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Premium desk decuration  have high-density graphite cores that ensuring long-lasting use.</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>sets colored  for vibrant  for office document office worker.</span>
+                    </div>
+                </div>
+
+                <div class="description-text">
+                    <p>An desk organizer set is an essential tool for anyone passionate about drawing and sketching. With a variety of blending tools, and high-quality materials, these sets provide everything an  needs to create detailed and professional  desk decuration .</p>
+                </div>
+            </div>
+
+            <div class="quantity-wrapper">
+                <div class="quantity-control">
+                    <button class="qty-btn" onclick="updateQuantity(-1)">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <input type="number" id="quantity" value="1" min="1" max="10" readonly>
+                    <button class="qty-btn" onclick="updateQuantity(1)">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="total-price">Total: <span id="total-price">$54.99</span></div>
+            </div>
+            
+            <div class="action-buttons">
+                <button id="hello" class="cart-btn-hello" onclick="addToCartAndShow(1, 'Premium Notebook', 24.99, 'https://media.istockphoto.com/id/1203694037/photo/brown-leather-notebook.jpg?s=612x612&w=0&k=20&c=CZr-hWdPsrIuPlXNzUSY-5-YWjxd-r8a3L9qo79dWqY=')">
+                    <i class="fas fa-cart-plus"></i>
+                    Add to Cart
+                </button>
+                <button class="buy-btn" onclick="proceedToCheckout()">
+                    <i class="fas fa-bolt"></i>
+                    Buy Now
+                </button>
+            </div>
+
+            <div class="additional-info">
+                <div class="info-item">
+                    <i class="fas fa-truck"></i>
+                    <span>Free shipping on orders over $50</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-undo"></i>
+                    <span>30-day return policy</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>
