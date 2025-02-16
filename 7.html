@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="product-styles.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="product-details.css">
+<link rel="stylesheet" href="responsive.css">
+    
+</head>
+<body>
+<main class="product-details-container">
+    <div class="product-details">
+        <div class="product-image-section">
+            <div class="main-image">
+                <img src="https://sc04.alicdn.com/kf/H4d3ded5bc4b44a418d2af8d807ec373ey/239676280/H4d3ded5bc4b44a418d2af8d807ec373ey.jpg" alt="">
+                
+            </div>
+        </div>
+        
+        <div class="product-info-section">
+            <div class="product-header">
+                <h1>Decorative Paper Set   </h1>
+                <div class="product-meta">
+                    <span class="sku">SKU: NB001</span>
+                    <span class="category">Category: Stationery</span>
+                </div>
+            </div>
+
+            <div class="product-rating">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="rating-count">(120 Reviews)</span>
+            </div>
+
+            <div class="price-details">
+                <div class="base-price">Unit Price: $17.99</div>
+                <div class="total-price">Total: <span id="total-price">$29.99</span></div>
+            </div>
+
+            
+
+            <div class="product-description">
+                <h3>Product Details</h3>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Customizable Options: This product offers a wide range of customization options, including custom size (3x3 inch or custom), 
+                            ..</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Multi-Purpose Use: Suitable for various settings, including home, school, and office, this product is an essential item for daily use, collection.</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>High-Quality Adhesive: The self-adhesive feature ensures that the notes stick securely to any surface, .</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Eco-Friendly and Sustainable: With a minimum order quantity of 10 cartons, this product is perfect for businesses looking .</span>
+                    </div>
+                </div>
+
+                <div class="description-text">
+                    <h2> Discription of product </h2>
+                    <p> An Factory Cheap Sticky Notes is an essential tool for anyone passionate about drawing and sketching.
+                        <br> With a variety of blending tools, and high-quality materials,
+                        <br> these sets provide everything an office material 
+                        </p>
+                </div>
+            </div>
+
+            <div class="quantity-wrapper">
+                <div class="quantity-control">
+                    <button class="qty-btn" onclick="updateQuantity(-1)">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <input type="number" id="quantity" value="1" min="1" max="10" readonly>
+                    <button class="qty-btn" onclick="updateQuantity(1)">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="total-price">Total: <span id="total-price">$29.99</span></div>
+            </div>
+            
+            <div class="action-buttons">
+                <button id="hello" class="cart-btn-hello" onclick="addToCartAndShow(1, 'Premium Notebook', 24.99, 'https://media.istockphoto.com/id/1203694037/photo/brown-leather-notebook.jpg?s=612x612&w=0&k=20&c=CZr-hWdPsrIuPlXNzUSY-5-YWjxd-r8a3L9qo79dWqY=')">
+                    <i class="fas fa-cart-plus"></i>
+                    Add to Cart
+                </button>
+                <button class="buy-btn" onclick="proceedToCheckout()">
+                    <i class="fas fa-bolt"></i>
+                    Buy Now
+                </button>
+            </div>
+
+            <div class="additional-info">
+                <div class="info-item">
+                    <i class="fas fa-truck"></i>
+                    <span>Free shipping on orders over $50</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-undo"></i>
+                    <span>30-day return policy</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>
